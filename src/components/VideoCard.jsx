@@ -10,6 +10,9 @@ export default function VideoCard({ video, type }) {
     <li
       className={isList ? "flex gap-1 m-2" : ""}
       onClick={() => {
+        /*이 경우 전달되는 상태 데이터는 { video }클릭되는 동영상에 대한 정보를 
+        포함하는 객체이다. 함수 { state: { video } }에 두 번째 매개 변수로
+         전달하면 개체가 새 경로의 상태로 저장함.  */
         navigate(`/videos/watch/${video.id}`, { state: { video } });
       }}
     >
