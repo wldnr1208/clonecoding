@@ -1,8 +1,9 @@
-import { format, register } from 'timeago.js';
-import koLocale from 'timeago.js/lib/lang/ko';
+//날짜 한국어로
+import { format, register } from "timeago.js";
+import koLocale from "timeago.js/lib/lang/ko";
 
-register('ko', koLocale);
+register("ko", koLocale);
 
-export function formatAgo(date, lang = 'en_US') {
+export function formatAgo(date, lang = "en_US") {
   return format(date, lang);
 }
