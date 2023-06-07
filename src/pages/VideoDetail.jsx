@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ChannelInfo from "../components/ChannelInfo";
 import RelatedVideos from "../components/RelatedVideos";
+import Comment from "../components/Comment";
 
 export default function VideoDetail() {
   const {
@@ -38,6 +39,7 @@ export default function VideoDetail() {
           >
             {isExpanded ? "간략히" : "더보기"}
           </button>
+          <Comment videoId={video.id} />
         </div>
       </article>
       <section className="basis-2/6">

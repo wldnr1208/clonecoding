@@ -18,6 +18,18 @@ export default class Youtube {
       .channels({ params: { part: "snippet,statistics", id } })
       .then((res) => res.data.items[0]);
   }
+  async fetchComments(videoId) {
+    return this.apiClient
+      .commentThreads({
+        part: "snippet",
+        videoId,
+        textFormat: "plainText",
+        maxResults: 30,
+      })
+      .then((res) =>
+        res.data.items.map((item) => item.snippet.topLevelComment.snippet)
+      );
+  }
 
   async relatedVideos(id) {
     return this.apiClient
